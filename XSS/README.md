@@ -4,6 +4,7 @@
 - Celah keamanan XSS berada di fitur pencarian (Search)
 
 
+
 - Masukkan payload berikut pada field pencarian lalu tekan tombol **Search**
 ```sh
 <script>alert(1)</script>
