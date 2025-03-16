@@ -100,3 +100,54 @@
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2028.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2029.JPG)
+
+## Host header authentication bypass
+- Di lab ini kita akan mempraktekkan privilege escalation menggunakan HTTP Host header attack.
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2030.JPG)
+
+- Akses path `/robots.txt`, disini ditemukan halaman `/admin`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2031.JPG)
+
+- Jika kita akses halaman `/admin` muncul pesan bahwa halaman tersebut hanya bisa diakses melalui local
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2032.JPG)
+
+- Buka tool Burp Suite dengan kondisi Intercept On
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%203.JPG)
+
+- Reload halaman `/admin`. Setelah Burp Suite terbuka, klik kanan request dan pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2033.JPG)
+
+- Selanjutnya tekan tombol **Forward** lalu matikan Intercept
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2034.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2035.JPG)
+
+- Pindah ke tab Repeater
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2036.JPG)
+
+- Ubah nilai Host menjadi `localhost` setelah itu klik tombol **Send** maka kita berhasil mengakses halaman admin. Pada bagian response terdapat link untuk menghapus user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2037.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2038.JPG)
+
+- Ubah path request menjadi sebagai berikut setelah itu klik tombol **Send**. Setelah muncul response, klik tombol **Follow redirection**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2039.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2040.JPG)
+
+- Maka kita akan di redirect ke halaman `/admin`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2041.JPG)
+
+- Reload halaman `/admin` maka akan muncul notifikasi lab berhasil diselesaikan
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/HTTP%20Host%20Header%20Attacks/assets/header%20attack%2042.JPG)
