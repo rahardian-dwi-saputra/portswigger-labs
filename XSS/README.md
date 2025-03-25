@@ -54,7 +54,7 @@
 
 - Klik kanan kemudian pilih **Lihat Kode Sumber Halaman**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2011.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2011.jpg)
 
 - Akan ditemukan function javascript sebagai berikut
 
@@ -94,7 +94,7 @@ document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onloa
 
 - Klik kanan kemudian pilih **Lihat Kode Sumber Halaman**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2019.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2019.jpg)
 
 - Akan ditemukan function javascript sebagai berikut
 
