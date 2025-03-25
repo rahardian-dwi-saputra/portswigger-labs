@@ -120,3 +120,41 @@ document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onloa
 ```sh
 <span id="searchMessage"><img src="1" onerror="alert(1)"></span>
 ```
+
+## DOM XSS in jQuery anchor href attribute sink using location.search source
+- Celah keamanan berada di halaman **Feedback**. Tekan tombol **View Post**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2024.JPG)
+
+- Klik link **Submit feedback**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2025.JPG)
+
+- Pada URL akan tampak parameter **returnPath**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2026.JPG)
+
+- Klik kanan kemudian pilih **Lihat Kode Sumber Halaman**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2027.jpg)
+
+- Akan ditemukan function javascript sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2028.JPG)
+
+- Masukkan payload berikut ini pada nilai parameter **returnPath** kemudian tekan enter
+```sh
+javascript:alert(document.cookie)
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2029.JPG)
+
+- Jika kita melakukan inspeksi pada Back link akan tampak HTML sebagai berikut
+```sh
+<a id="backLink" href="javascript:alert(document.cookie)">Back</a>
+```
+- Jika kita klik link tersebut akan muncul popup
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2030.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2031.JPG)
