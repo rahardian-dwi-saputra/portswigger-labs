@@ -219,3 +219,90 @@ javascript:alert(document.cookie)
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2046.JPG)
 
 - Payload diatas akan mentrigger event `hashchange` kemudian mengeksekusi payload XSS
+
+## Reflected XSS into attribute with angle brackets HTML-encoded
+- Celah keamanan XSS berada di fitur pencarian (Search)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2047.JPG)
+
+- Ketik `test` pada field pencarian lalu klik tombol **Search**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2048.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2049.JPG)
+
+- Klik kanan field **pencarian** lalu pilih **Inspeksi**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2050.jpg)
+
+- HTML input yang tampak seperti berikut ini
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2051.JPG)
+
+- Untuk mendapatkan kerentanan XSS kita bisa menyisipkan attribut melalui inputan string seperti berikut ini
+```sh
+"onmouseover="alert(1)
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2052.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2053.JPG)
+
+- Anda juga bisa menggunakan payload berikut ini
+```sh
+"onfocus="alert(1)
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2054.JPG)
+
+- Payload diatas akan membentuk HTML sebagai berikut
+```sh
+<input type=text placeholder='Search the blog...' name=search value=""onmouseover="alert(1)">
+```
+
+## Stored XSS into anchor href attribute with double quotes HTML-encoded
+- Celah kerentanan berda di fitur Post Komentar. Klik tombol **View post**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2055.JPG)
+
+- Scroll kebawah untuk menemukan form untuk menulis komentar
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2056.JPG)
+
+- Isi form seperti berikut ini kemudian klik tombol **Post Comment**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2057.JPG)
+
+- Lalu klik link **Back to blog**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2058.JPG)
+
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2059.jpg)
+
+- Hasil inputan field **Website** akan dimasukkan ke dalam seperti berikut ini
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2060.JPG)
+
+- Isi form dengan memasukkan payload berikut pada field **Website** kemudian klik tombol **Post Comment**
+```sh
+javascript:alert(1)
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2061.JPG)
+
+- Lalu klik link **Back to blog**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2062.JPG)
+
+- Klik link pada nama user di komentar untuk memunculkan popup
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2063.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2064.JPG)
+
+- Payload diatas akan menghasilkan link sebagai berikut
+```sh
+<a id="author" href="javascript:alert(1)">Testing</a>
+```
