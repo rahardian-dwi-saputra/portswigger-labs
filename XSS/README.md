@@ -52,7 +52,7 @@
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2010.JPG)
 
-- Klik kanan kemudian pilih **Lihat Kode Sumber Halaman**
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2011.jpg)
 
@@ -92,7 +92,7 @@ document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onloa
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2018.JPG)
 
-- Klik kanan kemudian pilih **Lihat Kode Sumber Halaman**
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2019.jpg)
 
@@ -134,7 +134,7 @@ document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onloa
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2026.JPG)
 
-- Klik kanan kemudian pilih **Lihat Kode Sumber Halaman**
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2027.jpg)
 
@@ -158,3 +158,64 @@ javascript:alert(document.cookie)
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2030.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2031.JPG)
+
+## DOM XSS in jQuery selector sink using a hashchange event
+- Akses lab
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2032.JPG)
+
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2033.jpg)
+
+- Akan ditemukan function javascript sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2034.JPG)
+
+- Untuk men trigger event `hashchange` kita bisa menambahkan path `/#judul artikel` seperti ini pada URL kemudian tekan enter
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2035.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2036.JPG)
+
+- Halaman akan secara otomatis men scroll ke judul yang dituju
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2037.JPG)
+
+- Untuk mengecek kerentanan XSS, kita bisa menambahkan payload sebagai berikut pada URL
+```sh
+/#<img src=x onerror=prompt(1)>
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2038.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2039.JPG)
+
+- Buka Exploit Server
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2040.JPG)
+
+- Pada bagian Body masukkan payload sebagai berikut kemudian klik tombol **Store**
+```sh
+<iframe src="https://lab_id.web-security-academy.net/#abc" onload="this.src=this.src+'<img src=x onerror=print()>'"></iframe>
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2041.JPG)
+
+- Klik tombol **View exploit** untuk melihat hasil
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2042.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2043.JPG)
+
+- Klik tombol **Batal** kemudian **Back** untuk kembali ke halaman Exploit server
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2044.JPG)
+
+- Klik tombol **Deliver exploit to victim** untuk menyelesaikan lab
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2045.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2046.JPG)
+
+- Payload diatas akan mentrigger event `hashchange` kemudian mengeksekusi payload XSS
