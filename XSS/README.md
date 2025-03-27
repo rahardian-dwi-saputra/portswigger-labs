@@ -1,9 +1,15 @@
 # Cross-site scripting (XSS)
+
 Judul lab:
 1. [Reflected XSS into HTML context with nothing encoded](#reflected-xss-into-html-context-with-nothing-encoded)
 2. [Stored XSS into HTML context with nothing encoded](#stored-xss-into-html-context-with-nothing-encoded)
-3. [Reflected XSS into a JavaScript string with angle brackets HTML encoded](#reflected-xss-into-a-javascript-string-with-angle-brackets-html-encoded)
-
+3. [DOM XSS in innerHTML sink using source location.search](#dom-xss-in-innerhtml-sink-using-source-locationsearch)
+4. [DOM XSS in innerHTML sink using source location.search](#dom-xss-in-innerhtml-sink-using-source-locationsearch-1)
+5. [DOM XSS in jQuery anchor href attribute sink using location.search source](#dom-xss-in-jquery-anchor-href-attribute-sink-using-locationsearch-source)
+6. [DOM XSS in jQuery selector sink using a hashchange event](#dom-xss-in-jquery-selector-sink-using-a-hashchange-event)
+7. [Reflected XSS into attribute with angle brackets HTML-encoded](#reflected-xss-into-attribute-with-angle-brackets-html-encoded)
+8. [Stored XSS into anchor href attribute with double quotes HTML-encoded](#stored-xss-into-anchor-href-attribute-with-double-quotes-html-encoded)
+9. [Reflected XSS into a JavaScript string with angle brackets HTML encoded](#reflected-xss-into-a-javascript-string-with-angle-brackets-html-encoded)
 
 
 ## Reflected XSS into HTML context with nothing encoded
@@ -26,6 +32,7 @@ Judul lab:
 ```sh
 <img src=x onerror="alert(1)">
 ```
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## Stored XSS into HTML context with nothing encoded
 - Celah keamanan XSS berada di fitur komentar. Pilih salah satu postingan lalu tekan tombol **View post**
@@ -46,6 +53,8 @@ Judul lab:
 - Muncul pop up yang menjadi penanda kerentanan XSS
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%207.JPG)
+
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## DOM XSS in innerHTML sink using source location.search
 - Celah keamanan XSS berada di fitur pencarian (Search)
@@ -86,6 +95,7 @@ Judul lab:
 ```sh
 document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onload=alert(1)>">');
 ```
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## DOM XSS in innerHTML sink using source location.search
 - Celah keamanan XSS berada di fitur pencarian (Search)
@@ -126,6 +136,7 @@ document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onloa
 ```sh
 <span id="searchMessage"><img src="1" onerror="alert(1)"></span>
 ```
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## DOM XSS in jQuery anchor href attribute sink using location.search source
 - Celah keamanan berada di halaman **Feedback**. Tekan tombol **View Post**
@@ -164,6 +175,8 @@ javascript:alert(document.cookie)
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2030.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2031.JPG)
+
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## DOM XSS in jQuery selector sink using a hashchange event
 - Akses lab
@@ -225,6 +238,7 @@ javascript:alert(document.cookie)
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2046.JPG)
 
 - Payload diatas akan mentrigger event `hashchange` kemudian mengeksekusi payload XSS
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## Reflected XSS into attribute with angle brackets HTML-encoded
 - Celah keamanan XSS berada di fitur pencarian (Search)
@@ -265,6 +279,7 @@ javascript:alert(document.cookie)
 ```sh
 <input type=text placeholder='Search the blog...' name=search value=""onmouseover="alert(1)">
 ```
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## Stored XSS into anchor href attribute with double quotes HTML-encoded
 - Celah kerentanan berda di fitur Post Komentar. Klik tombol **View post**
@@ -312,6 +327,7 @@ javascript:alert(1)
 ```sh
 <a id="author" href="javascript:alert(1)">Testing</a>
 ```
+- [Kembali ke judul](#cross-site-scripting-xss)
 
 ## Reflected XSS into a JavaScript string with angle brackets HTML encoded
 - Celah keamanan XSS berada di fitur pencarian (Search)
@@ -345,3 +361,4 @@ javascript:alert(1)
 ```sh
 var searchTerms = ''-alert(1)-'';
 ```
+- [Kembali ke judul](#cross-site-scripting-xss)
