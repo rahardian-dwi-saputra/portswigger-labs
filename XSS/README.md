@@ -1,4 +1,9 @@
 # Cross-site scripting (XSS)
+Judul lab:
+- [Reflected XSS into HTML context with nothing encoded](## Reflected XSS into HTML context with nothing encoded)
+- [Reflected XSS into a JavaScript string with angle brackets HTML encoded](## Reflected XSS into a JavaScript string with angle brackets HTML encoded)
+
+
 
 ## Reflected XSS into HTML context with nothing encoded
 - Celah keamanan XSS berada di fitur pencarian (Search)
@@ -305,4 +310,37 @@ javascript:alert(1)
 - Payload diatas akan menghasilkan link sebagai berikut
 ```sh
 <a id="author" href="javascript:alert(1)">Testing</a>
+```
+
+## Reflected XSS into a JavaScript string with angle brackets HTML encoded
+- Celah keamanan XSS berada di fitur pencarian (Search)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2065.JPG)
+
+- Ketik `test` pada field pencarian lalu klik tombol **Search**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2066.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2067.JPG)
+
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2068.jpg)
+
+- Akan ditemukan script javascript sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2069.JPG)
+
+- Masukkan payload berikut pada field pencarian lalu tekan tombol **Search**
+```sh
+'-alert(1)-'
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2070.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/assets/xss%2071.JPG)
+
+- Payload diatas akan menghasilkan nilai variabel sebagai berikut
+```sh
+var searchTerms = ''-alert(1)-'';
 ```
