@@ -1,7 +1,7 @@
 # Cross-site scripting (XSS)
 Judul lab:
-- [Reflected XSS into HTML context with nothing encoded](## Reflected XSS into HTML context with nothing encoded)
-- [Reflected XSS into a JavaScript string with angle brackets HTML encoded](## Reflected XSS into a JavaScript string with angle brackets HTML encoded)
+- [Reflected XSS into HTML context with nothing encoded](#reflected-xss-into-html-context-with-nothing-encoded)
+- [Reflected XSS into a JavaScript string with angle brackets HTML encoded](#reflected-xss-into-a-javascript-string-with-angle-brackets-html-encoded)
 
 
 
