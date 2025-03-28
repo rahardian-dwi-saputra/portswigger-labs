@@ -110,7 +110,7 @@ document.write('<img src="/resources/images/tracker.gif?searchTerms="><svg onloa
 
 - Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2019.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2019.jpg)
 
 - Akan ditemukan function javascript sebagai berikut
 
@@ -185,7 +185,7 @@ javascript:alert(document.cookie)
 
 - Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2033.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2033.jpg)
 
 - Akan ditemukan function javascript sebagai berikut
 
@@ -253,7 +253,7 @@ javascript:alert(document.cookie)
 
 - Klik kanan field **pencarian** lalu pilih **Inspeksi**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2050.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2050.jpg)
 
 - HTML input yang tampak seperti berikut ini
 
@@ -300,7 +300,7 @@ javascript:alert(document.cookie)
 
 - Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2059.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/APPRENTICE/assets/xss%2059.jpg)
 
 - Hasil inputan field **Website** akan dimasukkan ke dalam seperti berikut ini
 
