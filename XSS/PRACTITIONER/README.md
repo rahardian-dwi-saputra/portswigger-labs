@@ -95,3 +95,108 @@ function (){
    alert(1);
 }
 ```
+
+## Reflected DOM XSS
+- Celah keamanan XSS berada di fitur pencarian (Search)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2019.JPG)
+
+- Jalankan tool Burp Suite dengan Intercept off
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2020.JPG)
+
+- Ketik 'test' pada field pencarian lalu tekan tombol **Search**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2021.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2022.JPG)
+
+- Pada Burp Suite terdapat request yang mengarah ke path `/search-results`. Klik kanan request tersebut dan pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2023.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2024.jpg)
+
+- Buka halaman web, klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2025.jpg)
+
+- Terdapat lampiran source code `searchResults.js`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2026.JPG)
+
+- Jika dibuka, disana terdapat fungsi `eval()`. Fungsi `eval()` ini akan mengeksekusi ekspresi javascript apapun yang tertulis di dalamnya termasuk fungsi `alert()`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2027.JPG)
+
+- Kembali ke Burp Suite, pindah ke tab **Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2028.JPG)
+
+- Ubah nilai parameter `search` menjadi seperti ini. Jika sudah tekan tombol **Send**
+```sh
+xss\"-alert(1)}//
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2029.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2030.JPG)
+
+- Tanda `\"` digunakan untuk menambahkan tanda kutip 2 pada string `xss` sehingga fungsi `alert()` berada di luar string. Tanda `}` digunakan untuk menutup hasil encode JSON. Kemudian tanda `//` digunakan untuk mengomentari tanda `"}` yang tersisa dibagian akhir. Untuk lebih jelaskan bisa amati perubahan berikut ini
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2031.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2032.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2033.JPG)
+
+- Sekarang masukkan payload diatas pada field **Search**
+```sh
+xss\"-alert(1)}//
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2034.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2035.JPG)
+
+## Stored DOM XSS
+- Celah keamanan XSS berada di fitur komentar. Pilih salah satu postingan lalu tekan tombol **View post**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2036.JPG)
+
+- Scroll kebawah untuk menemukan form untuk menulis komentar. Kemudian lakukan pengujian dengan menulis komentar seperti ini lalu klik tombol **Post Comment**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2037.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2038.JPG)
+
+- Hasil komentar akan tampak seperti ini. Terlihat bahwa karakter `<>` dihilangkan
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2039.JPG)
+
+- Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2040.jpg)
+
+- Terdapat lampiran source code `loadCommentsWithVulnerableEscapeHtml.js`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2041.JPG)
+
+- Di dalam source code `loadCommentsWithVulnerableEscapeHtml.js` terdapat fungsi `escapeHTML(html)`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2042.JPG)
+
+- Untuk mengeksploitasi kerentanan XSS kita memasukkan payload berikut ini ke dalam komentar
+```sh
+<><img src=x onerror=alert(1)>
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2043.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2044.JPG)
+
+- Hasilnya adalah sebagai berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2045.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2046.JPG)
