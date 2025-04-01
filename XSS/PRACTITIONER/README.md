@@ -200,3 +200,86 @@ xss\"-alert(1)}//
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2045.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2046.JPG)
+
+## Reflected XSS into HTML context with most tags and attributes blocked
+- Lab ini mengandung web application firewall (WAF) untuk memproteksi serangan XSS. Sebelum melakukan pengujian jalankan tool Burp Suite dengan Intercept off
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2047.JPG)
+
+- Masukkan payload berikut ini pada field **Search**
+```sh
+<img src=1 onerror=print()>
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2048.JPG)
+
+- Akan muncul respon bahwa tag tersebut tidak diizinkan
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2049.JPG)
+
+- Pada Burp Suite akan terekam request ke path `/search`. Klik kanan request tersebut lalu pilih **Send to Intruder**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2050.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2051.jpg)
+
+- Pindah ke tab Intruder
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2052.JPG)
+
+- Ubah value parameter search menjadi `<>` tambahkan tanda payload tepat diantara tanda `<` dan `>`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2053.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2054.JPG)
+
+- Buka link halaman https://portswigger.net/web-security/cross-site-scripting/cheat-sheet lalu copy semua tag
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2055.JPG)
+
+- Paste payload di Burp Suite kemudian klik tombol **Start attack**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2056.JPG)
+
+- Tunggu hingga proses selesai, urutkan hasil berdasarkan **Status code**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2057.JPG)
+
+- Disini terlihat jika WAF mengizinkan tag `body`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2058.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2059.JPG)
+
+- Sekarang kita coba masukkan payload berikut ini pada field **Search**
+```sh
+<body onload="alert(1)">
+```
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2060.JPG)
+
+- Muncul pesan bahwa atribut tidak diizinkan
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2061.JPG)
+
+- Kembali ke Burp Suite, ubah value parameter `search` menjadi seperti berikut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2062.JPG)
+
+- Pada halaman https://portswigger.net/web-security/cross-site-scripting/cheat-sheet klik tombol **Copy events to clipboard**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2063.JPG)
+
+- Klik tombol **Clear** untuk membersihkan daftar payload sebelumnya lalu tekan tombol **Paste** untuk menempel payload yang baru. Jika sudah, klik tombol **Start attack**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2064.JPG)
+
+- Tunggu hingga proses selesai, urutkan hasil berdasarkan **Status code**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2065.JPG)
+
+- Disini kita bisa menggunakan atribut `onresize` untuk menjalankan function javascript
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2066.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/XSS/PRACTITIONER/assets/xss%2067.JPG)
