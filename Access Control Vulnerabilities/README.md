@@ -139,3 +139,87 @@
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2038.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2039.JPG)
+
+## User ID controlled by request parameter
+- Akses lab dan masuk ke menu **My Account**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2040.JPG)
+
+- Login menggunakan akun `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2041.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2042.JPG)
+
+- Buka tool Burp Suite dengan kondisi Intercept Off
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2043.JPG)
+
+- Pada Burp Suite terekam request yang mengarah ke path `/my-account`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2044.JPG)
+
+- Klik kanan request tersebut dan pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2045.jpg)
+
+- Pindah ke tab Repeater
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2046.JPG)
+
+- Ubah nilai parameter `id` dari `wiener` menjadi `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2047.JPG)
+
+- Jika sudah klik tombol **Send** maka di response kita berhasil mendapatkan API key user `carlos`. Copy API key tersebut untuk menyelesaikan tantangan
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2048.JPG)
+
+- Submit API key user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2049.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2050.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2051.JPG)
+
+## User ID controlled by request parameter, with unpredictable user IDs
+- Akses lab
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2052.JPG)
+
+- Cari salah satu postingan, yang mana postingan tersebut diposting oleh user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2053.JPG)
+
+- Klik link user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2054.JPG)
+
+- Pada URL terdapat parameter `userId` yang merupakan `userId` user `carlos`. Copy nilai parameter tersebut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2055.JPG)
+
+- Klik menu **My Account**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2056.JPG)
+
+- Login menggunakan akun `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2057.JPG)
+
+- Setelah berhasil login, amati URL pada halaman tersebut. Pada URL halaman **My Account** terdapat parameter id yang berisi id dari user `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2058.JPG)
+
+- Ubah nilai parameter id tersebut dengan userId `carlos` yang sudah didapatkan pada langkah sebelumnya. Selanjutnya reload halaman tersebut sehingga didapat informasi akun user `carlos`. Copy API key user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2059.JPG)
+
+- Submit API key user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2060.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2061.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2062.JPG)
