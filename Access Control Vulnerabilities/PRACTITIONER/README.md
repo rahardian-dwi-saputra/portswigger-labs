@@ -26,7 +26,7 @@ Judul lab:
 
 - Klik kanan request tersebut kemudian pilih **Send to Repeater**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/PRACTITIONER/assets/access%20control%206.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/PRACTITIONER/assets/access%20control%206.jpg)
 
 - Pindah ke tab Repeater
 

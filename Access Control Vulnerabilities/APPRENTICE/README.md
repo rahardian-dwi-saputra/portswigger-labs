@@ -13,185 +13,195 @@ Judul lab
 ## Unprotected admin functionality
 - Akses lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%201.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%201.JPG)
 
-- Buka halaman `robots.txt`. Disana terdapat halaman `administrator-panel` yang Disallow
+- Buka file `robots.txt` dengan menambahkan path `/robots.txt` pada URL. Disana terdapat halaman `administrator-panel` yang Disallow. `robots.txt` adalah file teks sederhana yang berisi instruksi untuk bot perayap web, seperti Googlebot, tentang bagian mana dari situs web yang boleh atau tidak boleh di-crawl dan diindeks
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%202.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%202.JPG)
 
-- Buka halaman `administrator-panel`
+- Buka halaman `administrator-panel`. Halaman `administrator-panel` bisa langsung diakses tanpa harus login sebagai `administrator`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%203.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%203.JPG)
 
-- Hapus user `carlos` untuk menyelesaikan lab
+- Hapus user `carlos` dengan klik link **Delete** untuk menyelesaikan tantangan lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%204.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%204.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%205.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%205.JPG)
+
+- [Kembali ke judul](#access-control-vulnerabilities)
 
 ## Unprotected admin functionality with unpredictable URL
 - Akses lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%206.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%206.JPG)
 
 - Klik kanan halaman kemudian pilih **Lihat Kode Sumber Halaman**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%207.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%207.JPG)
 
-- Akan ditemukan script javascript yang didalamnya terdapat path halaman admin
+- Akan ditemukan script javascript yang didalamnya terdapat informasi path halaman admin yang merupakan bagian dari menu **Admin panel**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%208.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%208.JPG)
 
-- Buka halaman `admin-iw6e4b`
+- Coba buka halaman `/admin-iw6e4b`. Path `/admin-iw6e4b` mengarah ke halaman **Admin panel** yang bisa langsung diakses tanpa harus login sebagai `administrator` 
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%209.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%209.JPG)
 
-- Hapus user `carlos` untuk menyelesaikan lab
+- Hapus user `carlos` untuk menyelesaikan tantangan lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2010.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2010.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2011.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2011.JPG)
+
+- [Kembali ke judul](#access-control-vulnerabilities)
 
 ## User role controlled by request parameter
 - Akses lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2012.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2012.JPG)
 
 - Jika buka halaman `/admin` akan muncul pesan sebagai berikut
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2013.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2013.JPG)
 
 - Akses halaman login
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2014.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2014.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2015.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2015.JPG)
 
 - Buka tool Burp Suite dengan kondisi Intercept Off
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2016.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2016.JPG)
 
 - Login menggunakan akun `wiener`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2017.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2017.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2018.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2018.JPG)
 
-- Pada Burp Suite terdeteksi request yang mengarah ke path `/login` dan pada hasil responsenya terdapat informasi Cookie `Admin=false`
+- Pada Burp Suite terdeteksi request yang mengarah ke path `/login` dan pada hasil responsenya terdapat informasi Cookie `Admin=false`. Kita bisa mengubahnya menjadi `Admin=true` sehingga user `wiener` akan dianggap sebagai role user `Administrator`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2019.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2019.JPG)
 
-- Klik kanan halaman dan pilih **Inspect**
+- Kita akan mengubahnya melalui web browser. Klik kanan halaman dan pilih **Inspect**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2020.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2020.jpg)
 
 - Pindah ke tab Penyimpanan kemudian ubah nilai Cookie Admin dari `false` menjadi `true`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2021.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2021.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2022.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2022.JPG)
 
 - Reload halaman, maka akan tampil menu **Admin panel**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2023.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2023.JPG)
 
-- Buka menu **Admin panel** kemudian hapus user **carlos**
+- Buka menu **Admin panel** kemudian hapus user **carlos** untuk menyelesaikan tantangan lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2024.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2024.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2025.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2025.JPG)
+
+- [Kembali ke judul](#access-control-vulnerabilities)
 
 ## User role can be modified in user profile
 - Akses lab dan masuk ke menu **My Account**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2026.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2026.JPG)
 
 - Login menggunakan akun `wiener`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2027.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2027.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2028.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2028.JPG)
 
 - Buka tool Burp Suite dengan kondisi Intercept Off
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2029.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2029.JPG)
 
 - Lakukan update email
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2030.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2030.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2031.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2031.JPG)
 
 - Pada Burp Suite terekam request yang mengarah ke path `/my-account/change-email` untuk melakukan update email
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2032.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2032.JPG)
 
 - Klik kanan request tersebut dan pilih **Send to Repeater**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2033.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2033.jpg)
 
-- Pindah ke tab Repeater dan klik tombol **Send**
+- Pindah ke tab Repeater dan klik tombol **Send**. Pada response terdapat field `roleid:1`. Kita bisa menambahkan parameter `roleid` dengan nilai `2` dengan harapan bisa mengedit role user `wiener` menjadi `administrator` 
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2034.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2034.JPG)
 
-- Tambahkan parameter `roleid` dengan value `2` pada bagian request. Jika sudah tekan tombol **Send**
+- Tambahkan parameter `roleid` dengan value `2` pada bagian request. Jika sudah tekan tombol **Send**. Pada response, kita berhasil mengubah role user `wiener`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2035.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2035.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2036.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2036.JPG)
 
 - Reload halaman **My Account** maka akan terdapat menu **Admin panel**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2037.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2037.JPG)
 
-- Masuk ke halaman **Admin panel** kemudian delete user **carlos**
+- Masuk ke halaman **Admin panel** kemudian delete user **carlos** untuk menyelesaikan tantangan lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2038.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2038.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2039.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2039.JPG)
+
+- [Kembali ke judul](#access-control-vulnerabilities)
 
 ## User ID controlled by request parameter
 - Akses lab dan masuk ke menu **My Account**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2040.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2040.JPG)
 
 - Login menggunakan akun `wiener`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2041.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2041.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2042.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2042.JPG)
 
 - Buka tool Burp Suite dengan kondisi Intercept Off
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2043.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2043.JPG)
 
 - Pada Burp Suite terekam request yang mengarah ke path `/my-account`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2044.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2044.JPG)
 
 - Klik kanan request tersebut dan pilih **Send to Repeater**
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2045.jpg)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2045.jpg)
 
-- Pindah ke tab Repeater
+- Pindah ke tab Repeater. Path `/my-account` diakses menggunakan parameter `id` dengan value berupa username dari suatu user. Hal ini memungkinkan attacker untuk mengubahnya dengan username orang lain untuk mengakses informasi user tersebut
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2046.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2046.JPG)
 
 - Ubah nilai parameter `id` dari `wiener` menjadi `carlos`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2047.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2047.JPG)
 
-- Jika sudah klik tombol **Send** maka di response kita berhasil mendapatkan API key user `carlos`. Copy API key tersebut untuk menyelesaikan tantangan
+- Jika sudah klik tombol **Send**. Pada response kita berhasil mengakses informasi user lain yaitu `carlos` yang di dalamnya terdapat informasi API key. Copy API key tersebut untuk menyelesaikan tantangan lab
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2048.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2048.JPG)
 
 - Submit API key user `carlos`
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2049.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2049.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2050.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2050.JPG)
 
-![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2051.JPG)
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/APPRENTICE/assets/access%20control%2051.JPG)
+
+- [Kembali ke judul](#access-control-vulnerabilities)
 
 ## User ID controlled by request parameter, with unpredictable user IDs
 - Akses lab
