@@ -6,9 +6,9 @@ Judul lab
 - [User role can be modified in user profile](#user-role-can-be-modified-in-user-profile)
 - [User ID controlled by request parameter](#user-id-controlled-by-request-parameter)
 - [User ID controlled by request parameter, with unpredictable user IDs](#user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
-- User ID controlled by request parameter with data leakage in redirect
-- User ID controlled by request parameter with password disclosure
-- Insecure direct object references
+- [User ID controlled by request parameter with data leakage in redirect](#user-id-controlled-by-request-parameter-with-data-leakage-in-redirect)
+- [User ID controlled by request parameter with password disclosure](#user-id-controlled-by-request-parameter-with-password-disclosure)
+- [Insecure direct object references](#insecure-direct-object-references)
 
 ## Unprotected admin functionality
 - Akses lab
@@ -321,3 +321,52 @@ Judul lab
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2085.JPG)
 
 ## Insecure direct object references
+- Akses lab dan pergi ke menu **Live chat**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2086.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2087.JPG)
+
+- Tulis sebuah pesan kemudian klik tombol **Send**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2088.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2089.JPG)
+
+- Buka tool Burp Suite dengan kondisi Intercept Off
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2090.JPG)
+
+- Tekan tombol **View transcript**, maka web akan otomatis mendownload file dengan nama `2.txt`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2091.JPG)
+
+- Pada Burp Suite terdeteksi request untuk mendownload file `2.txt`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2092.JPG)
+
+- Klik kanan request tersebut kemudian pilih **Send to Repeater**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2093.jpg)
+
+- Pindah ke tab Repeater dan klik tombol **Send**. Pada response akan memuat isi dari file `2.txt`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2094.JPG)
+
+- Ubah nama file dari `2.txt` menjadi `1.txt` kemudian klik tombol **Send**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2095.JPG)
+
+- Pada response ditemukan sebuah password. Berdasarkan arahan lab, password tersebut dapat digunakan untuk login dengan username `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2096.JPG)
+
+- Masuk ke menu **My account**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2097.JPG)
+
+- Login dengan menggunakan username `carlos` dan password yang sudah ditemukan pada langkah sebelumnya
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2098.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2099.JPG)
