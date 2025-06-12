@@ -1,4 +1,14 @@
 # Access control vulnerabilities
+Judul lab
+- [Unprotected admin functionality](#unprotected-admin-functionality)
+- [Unprotected admin functionality with unpredictable URL](#unprotected-admin-functionality-with-unpredictable-url)
+- [User role controlled by request parameter](#user-role-controlled-by-request-parameter)
+- [User role can be modified in user profile](#user-role-can-be-modified-in-user-profile)
+- [User ID controlled by request parameter](#user-id-controlled-by-request-parameter)
+- [User ID controlled by request parameter, with unpredictable user IDs](#user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
+- User ID controlled by request parameter with data leakage in redirect
+- User ID controlled by request parameter with password disclosure
+- Insecure direct object references
 
 ## Unprotected admin functionality
 - Akses lab
@@ -223,3 +233,91 @@
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2061.JPG)
 
 ![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2062.JPG)
+
+## User ID controlled by request parameter with data leakage in redirect
+- Akses lab dan masuk ke menu **My account**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2063.JPG)
+
+- Login menggunakan akun `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2064.JPG)
+
+- Setelah berhasil login, pada URL akan terdapat parameter `id` dengan value `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2065.JPG)
+
+- Buka tool Burp Suite dengan kondisi Intercept Off
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2066.JPG)
+
+- Ubah nilai parameter id dari `wiener` menjadi `carlos` kemudian tekan enter
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2067.JPG)
+
+- Halaman akan otomatis di redirect ke halaman login
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2068.JPG)
+
+- Pada Burp Suite terdeteksi halaman akun `carlos` yang di dalamnya memuat API key user `carlos`. Copy API key tersebut
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2069.JPG)
+
+- Submit API key user `carlos`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2070.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2071.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2072.JPG)
+
+## User ID controlled by request parameter with password disclosure
+- Akses lab dan masuk ke menu **My account**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2073.JPG)
+
+- Login menggunakan akun `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2074.JPG)
+
+- Setelah berhasil login, pada URL akan terdapat parameter `id` dengan value `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2075.JPG)
+
+- Buka tool Burp Suite dengan kondisi Intercept Off
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2076.JPG)
+
+- Ubah nilai parameter `id` menjadi `administrator` kemudian tekan enter
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2077.JPG)
+
+- Disini kita berhasil mengakses informasi akun `administrator`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2078.JPG)
+
+- Pada Burp Suite, kita berhasil menemukan password dari user `administrator`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2079.JPG)
+
+- Logout dari akun `wiener`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2080.JPG)
+
+- Login kembali menggunakan akun `administrator`
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2081.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2082.JPG)
+
+- Masuk ke halaman **Admin panel**
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2083.JPG)
+
+- Hapus user `carlos` untuk menyelesaikan lab
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2084.JPG)
+
+![alt text](https://github.com/rahardian-dwi-saputra/portswigger-labs/blob/main/Access%20Control%20Vulnerabilities/assets/access%20control%2085.JPG)
+
+## Insecure direct object references
