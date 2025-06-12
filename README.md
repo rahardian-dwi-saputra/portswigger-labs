@@ -16,6 +16,5 @@ Repositori ini berisi cara menyelesaikan tantangan Portswigger lab
 	- [APPRENTICE](Access%20Control%20Vulnerabilities/APPRENTICE)
 	- [PRACTITIONER](Access%20Control%20Vulnerabilities/PRACTITIONER)
 
-
 ## Peringatan
 Semua materi yang disajikan disini hanya digunakan sebagai media pembelajaran. Penulis tidak bertanggung jawab atas penyalahgunaan dari materi tersebut
