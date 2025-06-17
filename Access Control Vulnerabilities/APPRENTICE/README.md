@@ -1,14 +1,14 @@
 # Access control vulnerabilities
 Judul lab
-- [Unprotected admin functionality](#unprotected-admin-functionality)
-- [Unprotected admin functionality with unpredictable URL](#unprotected-admin-functionality-with-unpredictable-url)
-- [User role controlled by request parameter](#user-role-controlled-by-request-parameter)
-- [User role can be modified in user profile](#user-role-can-be-modified-in-user-profile)
-- [User ID controlled by request parameter](#user-id-controlled-by-request-parameter)
-- [User ID controlled by request parameter, with unpredictable user IDs](#user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
-- [User ID controlled by request parameter with data leakage in redirect](#user-id-controlled-by-request-parameter-with-data-leakage-in-redirect)
-- [User ID controlled by request parameter with password disclosure](#user-id-controlled-by-request-parameter-with-password-disclosure)
-- [Insecure direct object references](#insecure-direct-object-references)
+1. [Unprotected admin functionality](#unprotected-admin-functionality)
+2. [Unprotected admin functionality with unpredictable URL](#unprotected-admin-functionality-with-unpredictable-url)
+3. [User role controlled by request parameter](#user-role-controlled-by-request-parameter)
+4. [User role can be modified in user profile](#user-role-can-be-modified-in-user-profile)
+5. [User ID controlled by request parameter](#user-id-controlled-by-request-parameter)
+6. [User ID controlled by request parameter, with unpredictable user IDs](#user-id-controlled-by-request-parameter-with-unpredictable-user-ids)
+7. [User ID controlled by request parameter with data leakage in redirect](#user-id-controlled-by-request-parameter-with-data-leakage-in-redirect)
+8. [User ID controlled by request parameter with password disclosure](#user-id-controlled-by-request-parameter-with-password-disclosure)
+9. [Insecure direct object references](#insecure-direct-object-references)
 
 ## Unprotected admin functionality
 - Akses lab
