@@ -7,6 +7,7 @@ Repositori ini berisi cara menyelesaikan tantangan Portswigger lab
 ## Alat yang digunakan
 - Web Browser (disarankan menggunakan browser Mozila Firefox)
 - [Burp Suite Community Edition](https://portswigger.net/burp/communitydownload)
+- Plugin [foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/) untuk browser Mozila Firefox
 
 ## Daftar Lab
 - Cross-site scripting (XSS)
